@@ -11,7 +11,9 @@ export default function ProfileHeader({ profile }) {
   return (
     <View style={styles.container}>
       <View style={styles.topRow}>
-        <Image source={{ uri: profile.avatar }} style={styles.avatar} />
+      <Image
+            source={require("../../assets/profile-icon.png")}
+            style={styles.avatar}/>
 
         <View style={styles.statsContainer}>
           <View style={styles.statItem}>
@@ -43,8 +45,7 @@ export default function ProfileHeader({ profile }) {
       <View style={styles.tabs}>
         <Text style={styles.activeTab}>▦</Text>
         <Text style={styles.inactiveTab}>▷</Text>
-        <Text style={styles.inactiveTab}>☺</Text>
-      </View>
+      <Image source={{ uri: profile.avatar }} style={styles.avatar} /></View>
     </View>
   );
 }

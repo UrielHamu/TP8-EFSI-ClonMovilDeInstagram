@@ -3,6 +3,7 @@ import {
   ActivityIndicator,
   FlatList,
   RefreshControl,
+  Image,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -76,9 +77,12 @@ export default function HomeScreen({ navigation }) {
             <Text style={styles.topIconText}>♡</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.topIcon} onPress={goToProfile}>
-            <Text style={styles.topIconText}>☺</Text>
-          </TouchableOpacity>
+    <TouchableOpacity onPress={goToProfile}>
+      <Image
+        source={require("../../assets/profile-icon.png")}
+        style={styles.profileIconImage}
+      />
+    </TouchableOpacity>
         </View>
       </View>
 
@@ -206,4 +210,11 @@ const styles = StyleSheet.create({
     color: "#0095f6",
     fontWeight: "700",
   },
+  profileIconImage: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    marginLeft: 18,
+  },
+
 });
