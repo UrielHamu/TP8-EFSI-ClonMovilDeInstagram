@@ -11,9 +11,7 @@ export default function ProfileHeader({ profile }) {
   return (
     <View style={styles.container}>
       <View style={styles.topRow}>
-      <Image
-            source={require("../../assets/profile-icon.png")}
-            style={styles.avatar}/>
+      <Image source={{ uri: profile.avatar }} style={styles.avatar} />
 
         <View style={styles.statsContainer}>
           <View style={styles.statItem}>
@@ -42,11 +40,12 @@ export default function ProfileHeader({ profile }) {
         <Text style={styles.editButtonText}>Editar perfil</Text>
       </TouchableOpacity>
 
-      <View style={styles.tabs}>
-        <Text style={styles.activeTab}>▦</Text>
-        <Text style={styles.inactiveTab}>▷</Text>
-      <Image source={{ uri: profile.avatar }} style={styles.avatar} /></View>
-    </View>
+            <View style={styles.tabs}>
+            <Text style={styles.activeTab}>▦</Text>
+            <Text style={styles.inactiveTab}>▷</Text>
+            <Text style={styles.inactiveTab}>◎</Text>
+          </View>
+          </View>
   );
 }
 
@@ -131,4 +130,10 @@ const styles = StyleSheet.create({
     fontSize: 21,
     color: "#999999",
   },
+  tabProfileIcon: {
+  width: 24,
+  height: 24,
+  borderRadius: 12,
+  opacity: 0.6,
+},
 });
