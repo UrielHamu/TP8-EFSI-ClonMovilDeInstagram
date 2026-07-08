@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from "react-native";
 
@@ -17,9 +18,9 @@ import { getCatPosts } from "../services/api";
 const screenWidth = Dimensions.get("window").width;
 const imageSize = screenWidth / 3;
 
-export default function ProfileScreen({ route }) {
+export default function ProfileScreen({ route, navigation }){ 
+  
   const postsFromFeed = route.params?.posts;
-
   const [posts, setPosts] = useState(postsFromFeed || []);
   const [loading, setLoading] = useState(!postsFromFeed);
 
@@ -52,17 +53,21 @@ export default function ProfileScreen({ route }) {
   return (
     <SafeAreaView style={styles.safeArea}>
       <FlatList
-        data={posts}
-        keyExtractor={(item) => item.id}
-        numColumns={3}
-        showsVerticalScrollIndicator={false}
-        ListHeaderComponent={<ProfileHeader profile={profileInfo} />}
-        renderItem={({ item }) => (
-          <View style={styles.gridItem}>
-            <Image source={{ uri: item.imageUrl }} style={styles.gridImage} />
-          </View>
-        )}
-      />
+  data={posts}
+  keyExtractor={(item) => item.id}
+  numColumns={3}
+  showsVerticalScrollIndicator={false}
+  ListHeaderComponent={<ProfileHeader profile={profileInfo} />}
+  renderItem={({ item }) => (
+    <TouchableOpacity
+      style={styles.gridItem}
+      activeOpacity={0.85}
+      onPress={() => navigation.navigate("PostDetail", { post: item })}
+    >
+      <Image source={{ uri: item.imageUrl }} style={styles.gridImage} />
+    </TouchableOpacity>
+  )}
+/>
     </SafeAreaView>
   );
 }
