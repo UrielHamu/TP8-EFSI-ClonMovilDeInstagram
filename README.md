@@ -1,3 +1,8 @@
-# TP8-EFSI-ClonMovilDeInstagram
 
-Nos basamos en el siguiente mock up de figma community: https://www.figma.com/community/file/1097399178760561463/instagram-mobile-app-ui-clone 
+Este proyecto fue realizado utilizando ChatGpt como herramienta como se puede ver a lo largo de esta conversación: https://chatgpt.com/share/6a4e6951-4148-83e9-b6d9-af7c3ff48497 , donde formamos, como prompt inicial, el contexto en el que queremos que la IA trabaje y que conforme a ello, sus respuestas se asemejen más al tipo de respuesta que nosotros podemos comprender perfectamente.
+
+En el desarrollo de la conversación con la IA, le vamos pidiendo distintas partes del codigo que nos pueden llevar de a poco a la resolución final. Luego de supervisar aquello que nos ofrece la IA, en algunos casos se lo cuestionamos para amoldar la respuesta a lo que nosotros esperamos, y en otros lo llevamos al proyecto para así ir formando nuestro código.
+
+En un principio, ChatGpt nos ofrecía una solución sin components, que si bien funcionaba como esperabamos, el código no era tan fácil de leer. Es por eso que luego de comprobar el correcto funcionamiento del proyecto, le solicitamos que nos muestre la misma respuesta en lo components que consideramos posibles de implementar.
+
+De todos modos, apareció una contradicción durante el desarrollo del TP, la IA aseguró que el estilo de los componentes debe estar incluido en el codigo a partir de la constante style. Esto no es a lo que estabamos acostumbrados, por lo que decidimos acudir a nuestra profesora, que nos despejó las dudas: "La IA les mintió, el estilo puede estar en un archivo aparte", aunque finalmente nos sugirió seguir de este modo (con el estilo dentro del archivo .jsx) ya que nos sería más fácil visualmente para el TP. Esto nos demostró que la IA puede tener errores de concepto a pesar de que por lo general está en lo correcto.
